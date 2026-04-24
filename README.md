@@ -27,15 +27,15 @@ The database consists of **7 core tables** and **2 analytical views**:
 
 ### Core Tables
 
-| Table Name | Type | Description |
-| :--- | :--- | :--- |
-| `genres` | Dictionary | Standardized list of movie genres. |
-| `movies` | Core Entity | Static TMDB movie metadata (titles, overview, dates, ratings, posters). |
-| `movie_genres` | Mapping | Many-to-many relationship between movies and genres. |
-| `users` | Core Entity | Independent entity for user accounts (includes masked password hashes). |
-| `user_reviews` | Interaction | User interactions containing local 0-10 ratings and review text. |
-| `movie_stats` | Partitioned | Vertically partitioned table storing real-time aggregated local stats to relieve read/write pressure on the `movies` table. |
-| `watchlists` | Interaction | Tracks movies users want to watch later (composite PK prevents duplicates). |
+| Table Name     | Type        | Description                                                                                                                 |
+| :------------- | :---------- | :-------------------------------------------------------------------------------------------------------------------------- |
+| `genres`       | Dictionary  | Standardized list of movie genres.                                                                                          |
+| `movies`       | Core Entity | Static TMDB movie metadata (titles, overview, dates, ratings, posters and so on).                                           |
+| `movie_genres` | Mapping     | Many-to-many relationship between movies and genres.                                                                        |
+| `users`        | Core Entity | Independent entity for user accounts (includes masked password hashes).                                                     |
+| `user_reviews` | Interaction | User interactions containing local 0-10 ratings and review text.                                                            |
+| `movie_stats`  | Partitioned | Vertically partitioned table storing real-time aggregated local stats to relieve read/write pressure on the `movies` table. |
+| `watchlists`   | Interaction | Tracks movies users want to watch later (composite PK prevents duplicates).                                                 |
 
 ### Analytical Views
 
@@ -52,10 +52,21 @@ The database consists of **7 core tables** and **2 analytical views**:
 * Obtain a free API key from TMDB.
 
 ### 2. Database Initialization
-Open your PostgreSQL client (e.g., DBeaver, pgAdmin, or `psql`) and create a new database named `Movie_Project`. Execute the provided `schema.sql` file to generate all tables, views, functions, triggers, and indexes.
+Open your PostgreSQL client (e.g., DBeaver, pgAdmin, or `psql`) and create a new database. Execute the provided `schema.sql` file to generate all tables, views. Then run `index.sql` if you don't need to test the efficiency of index.
 
 ### 3. Python Environment Setup
 Install the required Python packages via terminal:
 ```bash
 pip install requests psycopg2-binary
 pip install streamlit psycopg2
+```
+
+### 4. Data Fetching
+Run `data_fetching_by_TMDB_API.py`. If you need to some sample data for users and reviews, you can run `adding_users_and_reviews.py`, then you will get a sql file named `append_demo_data.sql`, then you can run it to insert data.
+
+### 5. Demo Test
+```bash
+streamlit run PATH_of_demo.py
+```
+
+and you can test SQL in user_scenarios to check.
