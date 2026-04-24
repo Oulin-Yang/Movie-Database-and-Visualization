@@ -1,5 +1,5 @@
 -- =====================================================================
--- Scenario 2: Decade Genre Champions (Based on TMDB Global Ratings)
+-- Scenario - Decade Genre Champions (Based on TMDB Global Ratings)
 -- =====================================================================
 
 WITH MovieDecades AS (
