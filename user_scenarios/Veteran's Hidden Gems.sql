@@ -1,4 +1,6 @@
-
+-- =====================================================================
+-- Scenario - Veteran's Hidden Gems
+-- =====================================================================
 
 WITH VeteranUsers AS (
     -- Step 1: Identify "Veterans" (users who have reviewed > 100 movies)
