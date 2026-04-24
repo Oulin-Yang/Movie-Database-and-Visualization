@@ -58,3 +58,4 @@ Open your PostgreSQL client (e.g., DBeaver, pgAdmin, or `psql`) and create a new
 Install the required Python packages via terminal:
 ```bash
 pip install requests psycopg2-binary
+pip install streamlit psycopg2
