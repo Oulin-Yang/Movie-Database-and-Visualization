@@ -1,3 +1,7 @@
+-- =====================================================================
+-- Scenario - Veteran's Hidden Gems
+-- =====================================================================
+
 -- Note: STDDEV is supported in PostgreSQL, MySQL, and Oracle. 
 -- It calculates how spread out the numbers are. A high Standard Deviation 
 -- means lots of 1-star and 10-star ratings (polarizing).
