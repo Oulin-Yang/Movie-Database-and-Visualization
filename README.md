@@ -1,5 +1,5 @@
 # Movie-Database-and-Visualization
-An interactive movie database built with Streamlit and Postgres. Explore hidden gems, decade genre champions, and polarizing films through advanced data visualization.
+An interactive movie database built with Streamlit and Postgres. Explore hidden gems, decade genre champions, and controversial films through advanced data visualization.
 
 # 🎬 TMDB Movie Database & Analytics Platform
 
@@ -7,15 +7,15 @@ An interactive movie database built with Streamlit and Postgres. Explore hidden 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![API](https://img.shields.io/badge/TMDB_API-01B4E4?style=for-the-badge&logo=themoviedb&logoColor=white)
 
-> An end-to-end data pipeline and relational database system designed for film and audience analysis. It automatically ingests real-world movie data from the TMDB API and stores it in a highly optimized PostgreSQL database. 
+> An end-to-end data pipeline and relational database system designed for film and audience analysis and recording. It ingests real-world movie data from the TMDB API and stores it in a PostgreSQL database.
 
 ---
 
 ## ✨ Project Highlights
 
-- **🤖 Automated Data Pipeline:** A robust Python script that fetches and paginates through the TMDB API, dynamically handling inserts and updates (Upserts) for movies and genres.
+- **🤖 Automated Data Pipeline:** A robust Python script that fetches and paginates through the TMDB API.
 - **🏗️ Optimized Relational Schema:** A 3NF-compliant PostgreSQL database separating static metadata (movies, genres) from dynamic interaction data (reviews, stats, watchlists).
-- **⚡ Automated Aggregation:** Utilizes PostgreSQL Triggers (`update_local_movie_stats`) to automatically calculate and update a movie's average rating and total review count in real-time.
+- **⚡ Automated Aggregation:** Utilizes PostgreSQL Trigger to automatically calculate and update a movie's average rating and total review count.
 - **🚀 Performance Tuned:** Implements specific B-Tree Indexes to drastically reduce query planning and execution time for complex analytical queries.
 - **🛡️ Data Integrity:** Enforces strict Foreign Key constraints with `ON DELETE CASCADE` to prevent orphan data, along with composite primary keys to prevent duplicates.
 
